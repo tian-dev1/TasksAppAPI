@@ -1,19 +1,19 @@
 //Manejo de rutas con express
 import { Router } from 'express';
-import { getTasks } from '../controllers/tasks'
+import { deleteTask, getTask, getTasks, getTasksCount, saveTask, updateTask } from '../controllers/tasks'
 const router = Router()
 
 router.get('/tasks', getTasks)
 
-router.get('/tasks/count')
+router.get('/tasks/count', getTasksCount)
 
-router.get('/tasks/:id')
+router.get('/tasks/:id', getTask)
 
-router.post('/tasks')
+router.post('/tasks', saveTask)
 
-router.delete('/tasks/:id')
+router.delete('/tasks/:id', deleteTask)
 
-router.put('/tasks/:id')
+router.put('/tasks/:id', updateTask)
 
 
-export default router
+export default router;

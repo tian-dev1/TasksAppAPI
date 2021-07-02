@@ -1,0 +1,4 @@
+@url_api = http://localhost:3000/tasks
+
+###
+GET {{url_api}} 
