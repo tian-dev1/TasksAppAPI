@@ -4,4 +4,27 @@
 GET {{url_api}} 
 
 ###
-GET {{url_api}}/2
+GET {{url_api}}/4
+
+###
+GET {{url_api}}/count
+
+###
+POST {{url_api}}
+Content-Type: application/json
+
+{
+    "title": "Tarea Número 5",
+    "description": "Descripción tarea número 5"
+}
+
+###
+PUT {{url_api}}/3
+Content-Type: application/json
+
+{
+    "description": "Descripción tarea número tres"
+}
+
+###
+DELETE {{url_api}}/5
