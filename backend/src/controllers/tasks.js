@@ -1,9 +1,16 @@
 //Funciones que se ejecutan cuando visitan una ruta en especifico
-export const getTasks = (req, res) =>{
-    res.send('Hello World!!')
+import {connect} from '../database'
+
+export const getTasks = async (req, res) =>{
+    const connection = await connect()
+    const [rows] = await connection.query('SELECT * FROM task')
+    res.json(rows)
 }
 
-export const getTask = (req, res) =>{
+export const getTask = async (req, res) =>{
+    const connection = await connect()
+    const [rows] = await connection.query("SELECT * FROM task  WHERE id = ?", [req.params.id,]);
+    console.log(rows[0])
     res.send('Hello World!!')
 }
 

@@ -2,3 +2,6 @@
 
 ###
 GET {{url_api}} 
+
+###
+GET {{url_api}}/2
