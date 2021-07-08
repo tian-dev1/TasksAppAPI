@@ -1,19 +1,75 @@
 //Manejo de rutas con express
 import { Router } from 'express';
-import { getTasks } from '../controllers/tasks'
+import { deleteTask, getTask, getTasks, getTasksCount, saveTask, updateTask } from '../controllers/tasks'
 const router = Router()
 
+/**
+ * @swagger
+ * tags:
+ *  name: Tasks
+ *  description: Tasks endpoint 
+ *  
+ */
+
+/**
+ * @swagger
+ * /tasks:
+ *  get:
+ *   summary: Get all tasks
+ *   tags: [Tasks]
+ *   
+ */
 router.get('/tasks', getTasks)
 
-router.get('/tasks/count')
+/**
+ * @swagger
+ * /tasks/count:
+ *  get:
+ *   summary: Get total tasks counter
+ *   tags: [Tasks]
+ *   
+ */
+router.get('/tasks/count', getTasksCount)
 
-router.get('/tasks/:id')
+/**
+ * @swagger
+ * /tasks/:id:
+ *  get:
+ *   summary: Get a task by id
+ *   tags: [Tasks]
+ *   
+ */
+router.get('/tasks/:id', getTask)
 
-router.post('/tasks')
+/**
+ * @swagger
+ * /tasks/:id:
+ *  post:
+ *   summary: Save a new task
+ *   tags: [Tasks]
+ *   
+ */
+router.post('/tasks', saveTask)
 
-router.delete('/tasks/:id')
+/**
+ * @swagger
+ * /tasks/:id:
+ *  delete:
+ *   summary: Delete a task by id
+ *   tags: [Tasks]
+ *   
+ */
+router.delete('/tasks/:id', deleteTask)
 
-router.put('/tasks/:id')
+/**
+ * @swagger
+ * /tasks/:id:
+ *  put:
+ *   summary: Update a task by id
+ *   tags: [Tasks]
+ *   
+ */
+router.put('/tasks/:id', updateTask)
 
 
-export default router
+export default router;
